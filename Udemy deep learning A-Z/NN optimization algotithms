@@ -1,12 +1,31 @@
 Optimization algorithms:
-The optimization algorithm is used to calculate the update equation corresponding to a training process, it provides the function used to update the weights. Normally, we have gradient based algorithms. For those, we can proceed to the actual update of the weights via the algorithm of backpropagation, which is basically a crafted chain of chain rules. Backpropagation dives through derivatives of functions of functions in order to reach the weights from the loss function. The algorithms below are all gradient based and build the update equations based on the gradient of the training loss function.
+The optimization algorithm is used to calculate the update equation corresponding to a training process, it provides the function 
+used to update the weights. Normally, we have gradient based algorithms. For those, we can proceed to the actual update of the 
+weights via the algorithm of backpropagation, which is basically a crafted chain of chain rules. Backpropagation dives through 
+derivatives of functions of functions in order to reach the weights from the loss function. The algorithms below are all gradient 
+based and build the update equations based on the gradient of the training loss function.
 
 
 1. Gradient descent:
-Optimization by minimizing the loss through its gradient in terms of the weights. The gradient is the direction of maximal growth, going opposite to it by tunning the weights is going to maximal minimization. Stochastic gradient descent optimizes computation, it is a stochastic approximation to gradient descent. It uses random samples of the training data to consider for calculating the gradient, making it an approximation. This can be turned sequential using samples of 1 data (could it be better than mini-batch? It seems just a less stable approximation used for extreme optimal computations). Momentum: the update uses the gradient of the weight + a contribution depending on the previous update, so it favors that direction and intensity of change; a stabilization method, for better convergence of the stochastic approximation. The 
+Optimization by minimizing the loss through its gradient in terms of the weights. The gradient is the direction of maximal growth, 
+going opposite to it by tunning the weights is going to maximal minimization. Stochastic gradient descent optimizes computation, 
+it is a stochastic approximation to gradient descent. It uses random samples of the training data to consider for calculating the 
+gradient, making it an approximation. This can be turned sequential using samples of 1 data (could it be better than mini-batch? 
+It seems just a less stable approximation used for extreme optimal computations). Momentum: the update uses the gradient of the 
+weight + a contribution depending on the previous update, so it favors that direction and intensity of change; a stabilization 
+method, for better convergence of the stochastic approximation.
 
 2. RMSprop:
-A modification based on adaptive learning rates. In different points of the loss landscape and between different weights, jump magnitudes can be drastically different and what keeps some updates on a right track can make others jump over minima. If the learning rate adapts to different jump intensities, this can be controlled. The adaptability is implemented by having one learning rate per weight and individually increasing or decreasing them based on previous gradient signs (increase the speed of stable directions and decrease the speed of changing directions). The amount of change is modulated by the size of the gradient, using the moving average (actually, RMSprop is the one from the class that uses mini-batch gradients to modulate the change, to stabilize updates across batches, needed for compatibility with the stochastic approximation).
+A modification based on adaptive learning rates. In different points of the loss landscape and between different weights, 
+jump magnitudes can be drastically different and what keeps some updates on a right track can make others jump over minima. 
+If the learning rate adapts to different jump intensities, this can be controlled. The adaptability is implemented by having 
+one learning rate per weight and individually increasing or decreasing them based on previous gradient signs (increase the speed 
+of stable directions and decrease the speed of changing directions). The amount of change is modulated by the size of the 
+gradient, using the moving average (actually, RMSprop is the one from the class that uses mini-batch gradients to modulate the 
+change, to stabilize updates across batches, needed for compatibility with the stochastic approximation).
 
 3. Adam:
-Adaptive moment estimation. An engineering over RMSprop that considers 1. another modulating factor of the learning rate depending on a first moment moving average (the usual moving average uses the squared gradient), functioning as a momentum applied to the learning rate, being more efficient on noisy gradients across batches and 2. a bias correction for the normal moving average modulation, thus bounding the learning rate and being more efficient on sparse gradients (closer to zero). 
+Adaptive moment estimation. An engineering over RMSprop that considers 1. another modulating factor of the learning rate 
+depending on a first moment moving average (the usual moving average uses the squared gradient), functioning as a momentum 
+applied to the learning rate, being more efficient on noisy gradients across batches and 2. a bias correction for the normal 
+moving average modulation, thus bounding the learning rate and being more efficient on sparse gradients (closer to zero). 
