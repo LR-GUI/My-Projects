@@ -3,7 +3,7 @@ This is a remastered version I made using the original images of the cards. The 
 cards based on a rarity scheme I proposed.
 
 Rules:
-Each player takes a vampire (black) or hero (white) deck and shuffles the cards.
+Each player takes a vampire (black) or hero (white) deck and shuffles the cards. The blue magic cards are equally divided between players.
 Start the game with 5 cards in hand and 20 lifepoints.
 At the beginning of your turn, draw a card.
 Then, you may play an attack. If you do, the opponent may play a defense. Then you may play a magic card.
