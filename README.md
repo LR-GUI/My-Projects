@@ -8,7 +8,7 @@ For my art and game design, also check out:
 
 [Itch.io](lrgui.itch.io) - Finished my first complete game F.U.G.A.
 
-[Twitter](twitter.com/_lrgui_) - Newest addition, just starting to share my first commercial game, still under development
+[Twitter](twitter.com/_lrgui_) - Newest addition, just starting to share my first commercial game, Bear Cave, still under development
 
 Check out other repositories for other specific projects or larger projects.
 
